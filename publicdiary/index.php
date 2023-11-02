@@ -1,6 +1,7 @@
 <?php
 $test = 0;
-//this sets the test tag to zero by default
+// you will want the comments of the regular diary to mostly understand this
+// for id be repeating myself
 ?>
 <!--Embed-->
     <meta content="My Diary <3" property="og:title" />

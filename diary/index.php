@@ -1,7 +1,6 @@
 <?php
 $test = 0;
 //this sets the test tag to zero by default
-//hello friends if youre reading this i havent finished adding comments
 ?>
 
 <head>
@@ -9,7 +8,6 @@ $test = 0;
 <link rel="stylesheet" href="style.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/diary/favicon.png">
     
 
 <!-- Begin Google Shit -->
@@ -40,17 +38,20 @@ $test = 0;
 ?>
 
 <title><?php
+// this is the tile (if you couldnt tell)
 $entry = $_GET['entry'];
-
+// first the entry tag is established
 $dottoslash = substr ($entry, strrpos( $entry, ',' ) + 1 ).'-'.substr($entry, 0, strpos($entry, ","));
+// next any commas (dont ask why its a dot) are replaced with dashes and shoved to wherever i put them
 $nien = str_replace('.', '-', $dottoslash);
-
+// next the periods are replaced
 
 $day = date('l F jS Y', strtotime($nien));
-
+// next the correctly formatted date is put in the nien tag (i tend to put no as a tag but in testing i was already using it)
+// and then its formatted differently
 
 echo $day;
-
+// and obviously outputting it
 
 
 
@@ -61,7 +62,7 @@ echo $day;
 <a title="back" class="back" href="<?php
 $entry = $_GET['entry'];
 echo '?year='.substr ($entry, strrpos( $entry, ',' ) + 1 );
-
+// next it removes all before that helpful comma and just gives you the year (i hate javascript)
 ?>
 "><span class="material-symbols-outlined">arrow_back</span></a> 
 
@@ -83,7 +84,7 @@ $dottoslash = substr ($entry, strrpos( $entry, ',' ) + 1 ).'/'.substr($entry, 0,
     $entrydir = 'entries/'.$dottoslash.'/';
  if (file_exists('entries/'.$dottoslash)) {
 echo "entries/".$dottoslash;
-// this gets the file and outputs it alongside any php code thats added
+// this grabs the link to the folder with the current entry and links you to it
  }
 ?>" target="blank" ><span class="material-symbols-outlined">folder</span></a>
 
@@ -93,14 +94,14 @@ $todaylink = date('n.j,Y');
 $today = date('Y/n.j');
 $entry = $_GET['entry'];
 
-
+// this will grab the current date and check if there are any entries for it to display a link
 
 
 
  if (file_exists('entries/'.$today)) {
-
+// this checks if the entry exists
  if ($entry == $todaylink) {
-     
+     // this checks if you are looking at it
  } else {
 echo '<a title="go to most recent entry" class="back" href="?entry='.$todaylink.'"><span class="material-symbols-outlined">today</span></a>';
 }
@@ -125,6 +126,7 @@ window.onload = function() {
   var x = document.getElementById("navbar");
   x.style.display = "none"; // Hide by default on page load
 }
+// i hate javascript i never use java HISSSSSSS
 </script>
 
 
@@ -134,7 +136,8 @@ window.onload = function() {
 <?php
 
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-
+// this checks the user agent to see if it should change the div to what i have for mobile
+// (note the movile div is intended to wrap around the screen fully horizontally but i havent gotten it to work)
 
 if($isMob){
 
@@ -166,7 +169,8 @@ $dottoslash = substr ($entry, strrpos( $entry, ',' ) + 1 ).'/'.substr($entry, 0,
 include ("entries/".$dottoslash."/entry.php");
 // this gets the file and outputs it alongside any php code thats added
  } else {
-
+// this is so it can properly lead to a 404 instead of showing a blank nothing page
+// mostly used to prevent 500 errors upon any back button presses
 header("HTTP/1.0 404 Not Found");
 
 }
@@ -210,7 +214,7 @@ $entry = $_GET['entry'];
 echo '<a class="back" href="?entry='.$waybackwhen.'"><span class="material-symbols-outlined">today</span></a>';
 
 }*/
-?>-->
+?> this code is not intended to be implemented in its current state. when implemented it overcrowds the year section-->
 
 <a class="back" id="copyLink" href="#"><span class="material-symbols-outlined">share</span></a>
 
@@ -225,24 +229,26 @@ echo '<a class="back" href="?entry='.$waybackwhen.'"><span class="material-symbo
 
 <h2>
 <?php
-#$year = '2023';
 $year = $_GET['year'];
 
-//                  |
-//this is file shit V
-// i cant explain a thing here it does what it does
-
+// this is a check for if the year even exists.
+// if it does not itl lead to a 500 error usually.
  if (file_exists('entries/'.$year)) {
      
 $dir    = 'entries/'.$year;
 
 
-// this gets the file and outputs it alongside any php code thats added
+
  } else {
 
 header("HTTP/1.0 404 Not Found");
 
 }
+
+
+// this is file shit
+// i cant explain a thing here it does what it does
+// i know how to utilize it dont get me wrong but its just magic to me
 
 $flies = array_values(array_diff(scandir($dir), array('..', '.')));
 
@@ -267,13 +273,17 @@ echo $shit;
 <?php endif ?>
 
 <?php if ($test == 0):
-// this is the default page so it checks if $test is 0 and it is!
+// finally this is the default page so it checks if $test is 0 and it is!
 ?>
 <title>diary</title>
 
 
 <h1>
 <?php
+// the same thing as way above
+// it checks if theres an entry and puts a link to this
+// note if you wish to make this a blog of any sort change it to be more user friendly!
+// as it stands this intended to be personal and does not stand to be user friendly.
 date_default_timezone_set('America/Denver');
 $todaylink = date('n.j,Y');
 $today = date('n.j.y');
@@ -296,7 +306,7 @@ echo '<a class="back" href="?entry=' . $todaylink . '">&#127800 My Diary &#12780
 <?php
 $dir    = 'entries/';
 
-$flies = array_values(array_diff(scandir($dir), array('..', '.', 'index.php', '.htaccess','filecode.php', 'codelets', 'errors', 'qr', 'media', 'novas cookbook', 'webcomms','FileBrowser')));
+$flies = array_values(array_diff(scandir($dir), array('..', '.', 'index.php')));
 
 for ($i = 0; $i < count($flies); $i++) {
     $nophp = str_replace('.php', '', $flies[$i]);
@@ -319,6 +329,7 @@ echo $shit;
 <?php endif ?>
 
 <script>
+// copy link code (the worst of the spagetti for i shoved php code in javascript *shiver* )
   function toClipboard(text) {
     if ("clipboard" in navigator && typeof navigator.clipboard.writeText === "function") {
       // Chrome
