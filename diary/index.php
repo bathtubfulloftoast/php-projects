@@ -363,13 +363,19 @@ echo $shit;
    
       $entry = $_GET['entry'];
       $year = $_GET['year'];
+// more grabbing
+
 
       $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+// this finds out weather or not youre using http or https
+
 
       $url = $protocol . $_SERVER['HTTP_HOST'];
+// this gets the full lonk of the website
 
    if (isset($_GET['year'])) {echo $url.'/publicdiary/?year='.$year;}
    if (isset($_GET['entry'])) {echo $url.'/publicdiary/?entry='.$entry;}
+// plastering the tags onto the end of the link
 
     ?>")
       .then(res => console.log("copied", res));
