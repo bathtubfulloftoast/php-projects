@@ -1,15 +1,15 @@
 html {
-    
+
 margin:0;
 height:100vh;
 font-family: 'Noto Sans', sans-serif;
 }
 
-
 body {
 font-family: 'Noto Sans', sans-serif;
-  background-color: #391f47;
+/*  background-color: #391f47;
 /*background-image: url("/Background.gif");*/
+background-color: #1c1c1c;
 width:100%;
 height:100vh;
 border:1px solid rgba(0,0,0,.0);
@@ -18,45 +18,36 @@ color:white;
 text-align:center;
 max-width: 100%;
 overflow-x: hidden;
-  cursor: url('pointer.png'), auto;
-
 
 }
-
 
 a {
 text-decoration: none;
-  cursor: url('pointer.png'), auto;
 }
-
 
 a:link, a:visited{
-color: green;
+color: #6342f5;
 }
 
-
 a:hover {
-color: red;
+color: #4730b3;
 }
 
 .back {
 text-align:left;
-user-select: none;
-cursor:pointer;
-
+user-select: none; /* Standard syntax */
+color:#473552;
 
 }
 .back:link, .back:visited{
-color: white;
+color: #473552;
 
 }
 
 .back:hover {
-    color: gray;
-
+    color: #745e74;
 
 }
-
 
 p {
 width:100%;
@@ -65,52 +56,55 @@ white-space: pre-line;
 display: inline-block;
 }
 
-
 .selbox {
 border: 3px solid black;
 width:50%;
 background-color:black;
 }
 
-
 .uhm {
 color: gray;
 font-size: 12;
 }
 
-
 hr {
-border: 3px solid #100219;
+border: 3px solid #4e4e4e;
 }
-
 
 .tophr {
-border: 2px solid #fff;
-margin: 30px -20px 20px;
+border: 2px solid #0d0d0d;
+margin: -10px -10px 20px;
 }
-
 
 img {
 max-width: 90%;
 min-width: 35%;
+}
+
+.pixelimg {
 -ms-interpolation-mode: nearest-neighbor;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
 }
 
-
-video {
-max-width: 90%;
-min-width: 70%;
+.video-js {
+width:90%;
+height: auto;
+aspect-ratio: 16/9;
 }
 
+#vjs-audio {
+  width:30%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
 
+/* fucking love that youre happy but fuck youre a pain past alice */
 .emote {
-width: 20px;
-max-width: 20px;
-min-width: 20px;
+width: 64px;
+max-width: 64px;
+min-width: 64px;
 }
-
 
 .text{
 display: inline-block;
@@ -120,37 +114,34 @@ margin: auto;
 width:85%;
 min-height:100vh;
 white-space: pre-line;
-background-color: #190626;
+background-color: #2e2e2e;
 background-size: 100%;
-border: 10px solid #100219;
+border: 10px solid #4e4e4e;
 color:#fff;
 text-align:center;
 border-bottom: none;
 }
 
-
 .mobtext {
   position: absolute;
   display: block;
   word-break: break-word;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the div horizontally */
   padding: 0;
   width: 100%;
   min-height: 100%;
   white-space: pre-line;
-  background-color: #190626;
-  border: 5px solid #190626;
+  background-color: #1c1c1c;
+  border: 5px solid #1c1c1c;
   background-size: cover;
   color: #fff;
   text-align: center;
 }
 
-
 .paddingdiv {
 padding: 10px;
 display:inline-block;
 }
-
 
 .daybooton:link, .daybooton:visited{
 border:5px solid rgba(0,0,0,.0);
@@ -159,71 +150,40 @@ color: #e6dfff;
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 border-radius: 10px;
-cursor:pointer;
 }
-
 
 .daybooton:hover {
 background-color:#4c1173;
 color: #cfc8e6;
 }
 
-
 .spoilertext {
 background-color:gray;
 color:gray;
 white-space:nowrap;
-user-select: none;
+user-select: none; /* Standard syntax */
 }
-
 
 bi {
 font-weight:bold;
 font-style: italic;
 }
 
-
 blink {
-animation: blinker 1s step-start infinite;
+animation: blinker 1.5s step-start infinite;
 }
-
 
 @keyframes blinker {
 50% {
-opacity: 0;
+opacity: 0.3;
 }
 
-
 }
-
-
-.switcher {
-z-index: 9;
-position: fixed;
-right: 30;
-border:5px solid rgba(0,0,0,.0);
-background-color:#6C9AD1;
-border-radius: 10px;
-transform: scale(1.5);
-}
-
-
-.switcher:link, .switcher:visited{
-color: #52759e;
-}
-
-
-.switcher:hover {
-background-color:#52759e;
-color: #6C9AD1;
-}
-
 
 .totop {
 text-align:center;
 bottom: 35;
 }
-
 
 audio {
 width:60%;
@@ -236,7 +196,41 @@ redacted {
 }
 
   #navbar a {
-    margin-right: 10px;
+    margin-right: 10px; /* Adjust the spacing as needed */
   }
 
+code {
+display: inline-block;
+text-align:left;
+border-radius: 2vmax;
+margin: auto;
+min-width:20%;
+max-width:95%;
+background-color: #141414;
+border: 3px ridge #1c1c1c;
+color:#fff;
+padding-bottom:15;
+padding-left:10;
+padding-right:10;
+font-family: 'Source Code Pro', monospace;
+font-size:14;
+}
+
+input[type=text] {
+border-radius: 1vmax;
+background-color: #141414;
+border: 3px ridge #1c1c1c;
+color:#fff;
+font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+}
+
+input[type=text]::placeholder {
+color: #9a90a6;
+}
+
+::selection {
+  color: black;
+    background:#473552;
+}
 
