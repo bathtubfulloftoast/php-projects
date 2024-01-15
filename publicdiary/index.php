@@ -1,8 +1,8 @@
 <?php
 $test = 0;
-// you will want the comments of the regular diary to mostly understand this
-// for id be repeating myself
+//this sets the test tag to zero by default
 ?>
+<head>
 <!--Embed-->
     <meta content="My Diary <3" property="og:title" />
 
@@ -12,17 +12,44 @@ $test = 0;
 <meta http-equiv="Refresh" content="0; url='/diary/?entry=<?php echo $entry; ?>'" />
 
 
-    <meta content="Entry For <?php
-$dottoslash = substr ($entry, strrpos( $entry, ',' ) + 1 ).'-'.substr($entry, 0, strpos($entry, ","));
+    <meta content="<?php
+//establish needed dates
+$dateonly = substr($entry, 0, strpos($entry, ","));
+$yearonly = substr ($entry, strrpos( $entry, ',' ) + 1 );
+$dottoslash = $yearonly.'-'.$dateonly;
 $nien = str_replace('.', '-', $dottoslash);
 
+$easter = date("n.j", easter_date());
+$haloween = '10'.date(".t", strtotime($nien));
+$newyear = '12'.date(".t", strtotime($nien));
 
-$day = date('l F jS Y', strtotime($nien));
+// see if the entry even exists
+if (file_exists($_SERVER['DOCUMENT_ROOT'].'/diary/entries/'.$yearonly.'/'.$dateonly)) {
 
+// if it does yanderedev it up and check for any given date
+if ($dateonly == '12.25') {
+    $day = 'Christmas '.date('Y', strtotime($nien)).'!!';
+} elseif ($dateonly == '12.24') {
+    $day = 'Christmas Eve '.date('Y', strtotime($nien)).'!!';
+} elseif ($dateonly == $easter) {
+    $day = 'Entry For Easter '.date('Y', strtotime($nien)).'!!';
+} elseif ($dateonly == $haloween) {
+    $day = 'Entry For Haloween '.date('Y', strtotime($nien)).'!!';
+} elseif ($dateonly == $newyear) {
+    $day = 'Goodbye '.$yearonly.'!!!';
+} elseif ($dateonly == '1.1') {
+    $day = 'HAPPY NEW YEAR!!
+    WELCOME '.$yearonly.'!!!';
+} else {
+    $day = 'Entry For '.date('l F jS Y', strtotime($nien));
+}
+} else {
+    // pseudo 404 (since its an embed)
+    $day = 'The Entry For '.date('n/j/Y', strtotime($nien)).' doesnt exist.';
+}
 
 echo $day;
 ?>" property="og:description" />
-
 <?php endif ?>
 
 
@@ -45,3 +72,5 @@ echo $year;
 <?php endif ?>
 <meta content="/publicdiary/faun.png" property="og:image" />
     <meta content="#1b141f" data-react-helmet="true" name="theme-color" />
+
+
