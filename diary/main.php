@@ -9,13 +9,16 @@ $todayfile = date('Y/n.j');
 
  if (file_exists('entries/'.$todayfile.'/entry.php')) {
 
-echo '<a class="back" href="?entry=' . $todaylink . '">Your Diary (today has an entry!)</a>';
+echo '<a class="back" href="?entry=' . $todaylink . '">Your Diary</a>';
 
  } else {
-     echo '<span style="color:white">Your Diary (no entry today :/)</span>';
+     echo '<span style="color:white">Your Diary</span>';
  }
 
  ?>
+ <a class="back" href="?search"><span class="material-symbols-outlined">search</span></a>
+
+
 </h1>
 <hr class="tophr">
 <h2>
@@ -26,7 +29,7 @@ $flies = array_values(array_diff(scandir($dir), array('..', '.', 'index.php', '.
 
 for ($i = 0; $i < count($flies); $i++) {
 #    $nophp = str_replace('.php', '', $flies[$i]);
-    sort($flies,  SORT_NATURAL);
+    rsort($flies,  SORT_NATURAL);
 
     $shit = '<a class="daybooton" href="?year=' . $flies[$i] . '">' . $flies[$i] . '</a><br><br>';
 
@@ -41,4 +44,5 @@ echo $shit;
 
 
 ?>
+
 </h2>

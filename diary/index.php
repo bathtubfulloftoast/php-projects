@@ -8,6 +8,9 @@ $test = 0;
 <link rel="stylesheet" href="style.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- turns out chrome on android utilizes this tag for cool coloring so...-->
+    <meta content="#1b141f" data-react-helmet="true" name="theme-color" />
+
 
 
 <!-- Begin Google Shit -->
@@ -42,6 +45,17 @@ if (isset($_GET['year'])){
   $test = 1;
 include ("year.php");
 }
+
+if (isset($_GET['search'])){
+  $test = 1;
+include ("searchpage.php");
+}
+
+if (isset($_GET['searchfunc'])){
+  $test = 1;
+include ("search.php");
+}
+
 
 if ($test == 0) {
 include ("main.php");
