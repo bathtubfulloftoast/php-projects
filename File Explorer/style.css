@@ -1,0 +1,171 @@
+html {
+
+margin:0;
+height:100vh;
+font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+font-family: 'Noto Sans', sans-serif;
+background-color: #1c1c1c;
+width:100%;
+height:100vh;
+border:1px solid rgba(0,0,0,.0);
+box-sizing:border-box;
+color:white;
+text-align:center;
+max-width: 100%;
+overflow-x: hidden;
+
+}
+
+a {
+text-decoration: none;
+  cursor: pointer, auto;
+}
+
+a:link, a:visited{
+color: #6342f5;
+}
+
+a:hover {
+color: #4730b3;
+}
+
+.back {
+text-align:left;
+user-select: none; /* Standard syntax */
+color:#473552;
+  cursor: pointer;
+}
+.back:link, .back:visited{
+color: #473552;
+
+}
+
+.back:hover {
+    color: #745e74;
+
+}
+
+p {
+width:100%;
+word-wrap: break-word;
+white-space: pre-line;
+display: inline-block;
+}
+
+.selbox {
+border: 3px solid black;
+width:50%;
+background-color:black;
+}
+
+hr {
+border: 3px solid #4e4e4e;
+}
+
+.tophr {
+border: 2px solid #0d0d0d;
+margin: -10px -10px 20px;
+}
+
+img {
+
+max-width: 90%;
+max-height: 1000px;
+  width: auto;
+  height: auto;
+}
+
+.video-js {
+width:90%;
+height: auto;
+aspect-ratio: 16/9;
+}
+
+
+
+.text{
+display: inline-block;
+word-break: break-word;
+border-radius: 5vmax 5vmax 0 0;
+margin: auto;
+width:85%;
+min-height:100vh;
+white-space: pre-line;
+background-color: #2e2e2e;
+background-size: 100%;
+border: 10px solid #4e4e4e;
+color:#fff;
+text-align:center;
+border-bottom: none;
+}
+
+.mobtext {
+  position: absolute;
+  display: block;
+  word-break: break-word;
+  margin: 0 auto; /* Center the div horizontally */
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  white-space: pre-line;
+  background-color: #1c1c1c;
+  border: 5px solid #1c1c1c;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.paddingdiv {
+padding: 10px;
+display:inline-block;
+}
+
+.daybooton:link, .daybooton:visited{
+border:5px solid rgba(0,0,0,.0);
+background-color:#5d158c;
+color: #e6dfff;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+
+.daybooton:hover {
+background-color:#4c1173;
+color: #cfc8e6;
+}
+
+audio {
+width:60%;
+}
+
+
+
+
+code {
+display: inline-block;
+text-align:left;
+border-radius: 2vmax;
+margin: auto;
+min-width:20%;
+max-width:95%;
+background-color: #141414;
+border: 3px ridge #1c1c1c;
+color:#fff;
+padding-bottom:15;
+padding-left:10;
+padding-right:10;
+font-family: 'Source Code Pro', monospace;
+font-size:14;
+}
+
+::selection {
+  color: black;
+    background:#473552;
+}
+
+iframe {
+ max-width:90%;
+}
