@@ -2,14 +2,12 @@
 
 <h1>
 <?php
-date_default_timezone_set('America/Denver');
-$todaylink = date('n.j,Y');
-$today = date('n.j.y');
+$today = date('n.j.Y');
 $todayfile = date('Y/n.j');
 
  if (file_exists('entries/'.$todayfile.'/entry.php')) {
 
-echo '<a class="back" href="?entry=' . $todaylink . '">Your Diary</a>';
+echo '<a class="back" href="?entry=' . $today . '">Your Diary</a>';
 
  } else {
      echo '<span style="color:white">Your Diary</span>';
@@ -17,8 +15,6 @@ echo '<a class="back" href="?entry=' . $todaylink . '">Your Diary</a>';
 
  ?>
  <a class="back" href="?search"><span class="material-symbols-outlined">search</span></a>
-
-
 </h1>
 <hr class="tophr">
 <h2>

@@ -1,0 +1,65 @@
+:root {
+    /* Text / General Colors */
+    --bg: #3d322c;
+    --bg2: #6f5a50;
+    --bg3: #817068;
+    --filebg: url(transparency.png);
+    
+    --text: #fff;
+    --defaulttext: #fff;
+    
+    --select: #e15563;
+    --select-text: #000;
+    
+    --code-bg: #07152e;
+    --code-text: #fff;
+    --code-select: #676ddb;
+    --code-select-text: #000;
+    --code-border: #000;
+    
+    --spoiler: rgb(21, 16, 38);
+    --spoiler-revealed: rgba(21, 16, 38, 0.69);
+    --spoiler-text: #fff;
+    
+    --tophr: #07152e;
+
+
+    /* Link Colors */
+    --navicon: #e15563;
+    --navicon-hover: #ad424c;
+    
+    --link: #e15692;
+    --link-hover: #ad4271;
+    
+    --button: #e15563;
+    --button-hover: #ad424c;
+    --button-text: #fff;
+    
+    --daybutton-main: #e15563;
+    --daybutton-hover: #ad424c;
+    --daybutton-text: #07152e;
+    
+    --daybutton-invalid: #07152e;
+    --daybutton-invalidtext: #e4e4e4;
+    --daybutton-end:#93494a;
+    --daybutton-end-hover: #613030;
+
+    /* "Special" HTML Tag Colors */
+    --progress-color: #d142f5;
+    --progress-bg: #424242;
+    --progress-border: #999999;
+    --loading-border: #c33ee6;
+    
+    --selection: #141414;
+    --selection-border: #1c1c1c;
+    --selection-text: #fff;
+    
+    --table-bg: #07152e;
+    --table-border: #000;
+    --table-text: #fff;
+    
+    --input-text: #141414;
+    --input-text-border: #1c1c1c;
+    --input-text-color: #fff;
+    --input-text-temp: #9a90a6;
+}

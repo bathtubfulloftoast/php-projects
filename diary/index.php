@@ -1,15 +1,31 @@
 <?php
 $test = 0;
+include('php/logging.php');
 //this sets the test tag to zero by default
-?>
+if (file_exists('kill')) {
+$kill = 1;
+} else {
+$kill = 0;
+}
 
+if ($kill == 1){
+header("HTTP/1.0 401");
+die();
+};
+
+?>
+<?php $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+date_default_timezone_set('America/Denver');
+?>
 <head>
-    
+
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="custom.css">
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- turns out chrome on android utilizes this tag for cool coloring so...-->
-    <meta content="#1b141f" data-react-helmet="true" name="theme-color" />
+<link rel="icon" href="favicon.ico">
+<meta content="#1b141f" data-react-helmet="true" name="theme-color" />
 
 
 
@@ -35,29 +51,51 @@ $test = 0;
 <!-- End Google Shit -->
 
 </head>
-
 <?php if (isset($_GET['entry'])){
   $test = 1;
-include ("entry.php");
+include ("php/entries.php");
 }
 
 if (isset($_GET['year'])){
   $test = 1;
-include ("year.php");
+include ("php/year.php");
 }
 
 if (isset($_GET['search'])){
   $test = 1;
-include ("searchpage.php");
+include ("php/searchpage.php");
 }
 
 if (isset($_GET['searchfunc'])){
   $test = 1;
-include ("search.php");
+include ("php/search.php");
 }
 
+if (isset($_GET['file'])){
+  $test = 1;
+include ("php/filedisplay.php");
+}
+
+if (isset($_GET['folder'])){
+  $test = 1;
+include ("php/folderview.php");
+}
+
+
+if (isset($_GET['logs'])){
+  $test = 1;
+include ("php/logview.php");
+}
 
 if ($test == 0) {
-include ("main.php");
+include ("php/main.php");
 }
 ?>
+
+<script>
+console.log("i see you!")
+console.log("this is very unprofessional so expect errors")
+console.log("if you want to help email me at mail@novassite.net")
+</script>
+
+
