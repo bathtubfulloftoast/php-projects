@@ -74,31 +74,20 @@ for ($month = 1; $month <= 12; $month++) {
         if (file_exists("entries/$year/$formattedDate")) {
 
             if ($formattedDate === '2.14') {
-                $bootonclass = "daybooton daybooton-val";
-            } 
+                $DateTitle = "❤️";
+            }
             elseif ($formattedDate === '12.24') {
-                $bootonclass = "daybooton daybooton-chrima";
+                $DateTitle = "🎄";
             }
             elseif ($formattedDate === '12.25') {
-                $bootonclass = "daybooton daybooton-chrima";
+                $DateTitle = "🎄";
             }
-            elseif ($formattedDate === '10.21') {
-                $bootonclass = "daybooton daybooton-ray";
-            }
+
             elseif ($formattedDate === '10.31') {
-                $bootonclass = "daybooton daybooton-hal";
+                $DateTitle = "🎃";
             }    
-           elseif ($formattedDate === '6.9') {
-                $bootonclass = "daybooton daybooton-bday";
-            }  
-           elseif ($formattedDate === '11.11') {
-                $bootonclass = "daybooton daybooton-ret";
-            }
-           elseif ($formattedDate === '3.15') {
-                $bootonclass = "daybooton daybooton-ani";
-            }
             elseif ($formattedDate === $easter) {
-                $DateTitle = "🥚$easter";
+                $DateTitle = "🥚";
             }
             elseif ($WeekDay === '6') {
                 $bootonclass = "daybooton daybooton-end";
