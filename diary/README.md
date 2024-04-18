@@ -9,7 +9,7 @@ jquery is also locally installed due to the fact this *should* be able to work o
 jquery is used for ajax for the logs
 it is locally installed so it can work offline
 
-## [<model viewer>](https://modelviewer.dev/)
+## [model viewer](https://modelviewer.dev/)
 model viewer is used to load glb/gltf 3d models if someone were to desire
 
 ## [Material Icons](https://fonts.google.com/icons)
